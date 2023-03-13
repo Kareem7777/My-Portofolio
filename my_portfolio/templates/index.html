@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+  </head>
 <body class="main-content">
     <header class="container header active" id="home">
         <div class="header-content">
@@ -268,22 +268,19 @@
                         </div>
                     </div>
                     <div class="right-contact">
-                        <form method="POST" action="" class="contact-form">
+                        <form method="POST" action="contact" class="contact-form">
+                          {% csrf_token %}
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input maxlength="250" name="name" type="text" required placeholder="YOUR NAME">
+                                <input name="email" type="email" required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input maxlength="250" name="subject" type="text" required placeholder="ENTER SUBJECT">
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea maxlength="99899" name="text" required id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
                             </div>
                             <div class="submit-btn">
-                                <!-- <a href="#" class="main-btn">
-                                    <span class="btn-text">Download CV</span>
-                                    <span class="btn-icon"><i class="fas fa-download"></i></span>
-                                </a> -->
                                 <input class="btn-submit" type="submit">
                             </div>
                         </form>
@@ -292,6 +289,10 @@
             </div>
         </section>
     </main>
+    <!-- <div class="popup">
+      
+      <span>Thanks For your Message</span>
+    </div> -->
     <div class="controls">
       <div class="control active-btn" data-id="home" >
         <i class="fas fa-home"></i>

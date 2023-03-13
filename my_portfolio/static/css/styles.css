@@ -87,6 +87,14 @@ section {
   }
 }
 
+.popou {
+  position: absolute;
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  right: 20%;
+}
+
 .controls {
   position: fixed;
   z-index: 10;
